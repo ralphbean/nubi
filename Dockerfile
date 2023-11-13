@@ -1,9 +1,5 @@
 FROM registry.access.redhat.com/ubi8/ubi AS builder
 
-# Obviously don't include yum repos this way, use OSBS parameters instead.
-ADD https://cts.engineering.redhat.com/api/1/composes/RHEL-8.6.0-20220306.2/repo/?variant=BaseOS /etc/yum.repos.d/cts-base-os.repo
-ADD https://cts.engineering.redhat.com/api/1/composes/RHEL-8.6.0-20220306.2/repo/?variant=AppStream /etc/yum.repos.d/cts-app-stream.repo
-
 RUN mkdir -p /mnt/rootfs
 
 RUN \
